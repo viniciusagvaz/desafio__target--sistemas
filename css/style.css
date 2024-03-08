@@ -1,0 +1,145 @@
+:root {
+	--gray-50: #f8f7f8;
+	--gray-100: #f0eeee;
+	--gray-200: #ded9da;
+	--gray-300: #c1b8bb;
+	--gray-400: #9f9196;
+	--gray-500: #847379;
+	--gray-600: #6c5d62;
+	--gray-700: #584c50;
+	--gray-800: #4b4144;
+	--gray-900: #41393b;
+	--gray-950: #231f20;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+  font-family: 'Fira Code';
+}
+
+header {
+	display: flex;
+  flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Space Mono';
+
+	background-color: var(--gray-950);
+
+	color: var(--gray-600);
+}
+
+header img {
+	max-width: 16rem;
+}
+
+main {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 10%;
+
+	height: 100vh;
+
+	background-color: var(--gray-100);
+}
+
+.questao__1,
+.questao__2,
+.questao__5 {
+  position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+
+	max-width: 250px;
+	margin: 0 auto;
+	padding: 0.8rem 0;
+}
+
+.soma__function {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  line-height: .8rem;
+  font-size: .8rem;
+}
+
+
+main h4 {
+  position: absolute;
+  
+  bottom: 42%;
+}
+
+button {
+  position: absolute;
+  top: 36%;
+  
+  margin: .5rem 0;
+  border: none;
+  background: var(--gray-900);
+  padding: .4rem;
+  border-radius: 2px;
+  font-weight: 600;
+  color: var(--gray-200);
+}
+
+button:hover {
+  opacity: .9;
+}
+
+footer {
+	background-image: url(../assets/softwaredev.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  bottom: 16%;
+  left: 50%;
+}
+
+ul {
+  display: flex;
+  justify-content: baseline;
+  gap: 1rem;
+
+  list-style: none;
+}
+
+i {
+  font-size: 1.6rem;
+  color: var(--gray-300);
+}
+
+i:hover {
+  color: aliceblue;
+  transform: scale(1.2);
+  transition: all .3s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-300);
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-800);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-700);
+}
