@@ -10,136 +10,188 @@
 	--gray-800: #4b4144;
 	--gray-900: #41393b;
 	--gray-950: #231f20;
+
+  --java-600: #158c79;
 }
 
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-  font-family: 'Fira Code';
+	font-family: 'Fira Code', sans-serif;
 }
 
-header {
-	display: flex;
-  flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	font-family: 'Space Mono';
-
-	background-color: var(--gray-950);
-
-	color: var(--gray-600);
-}
-
-header img {
-	max-width: 16rem;
-}
-
-main {
-	display: flex;
-	justify-content: space-between;
-	padding-top: 10%;
-
-	height: 100vh;
-
+body {
+  height: 100vh;
+  position: relative;
 	background-color: var(--gray-100);
 }
 
-.questao__1,
-.questao__2,
-.questao__5 {
-  position: relative;
+.header__container {
+	position: relative;
+
+  display: flex;
+  justify-content: space-around;
+
+	background-color: var(--gray-950);
+  box-shadow: 0px 3px 5px 0px #00000070;
+}
+
+.header__logo {
+	max-width: 18rem;
+}
+
+.main__container {
+	background-color: var(--gray-100);
+}
+
+.main__resultados {
+	display: flex;
+	justify-content: center;
+  padding-top: 5%;
+}
+
+.main__resultados h4 {
+	position: absolute;
+	top: 60%;
+}
+
+.questao {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 0.5rem;
 
 	max-width: 250px;
+	height: 300px;
 	margin: 0 auto;
 	padding: 0.8rem 0;
 }
 
-.soma__function {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 auto;
-  align-items: center;
-  line-height: .8rem;
-  font-size: .8rem;
+
+.questao__1--paragrafo {
+	position: absolute;
+	top: 28%;
+	font-weight: 600;
+	margin: 0 auto;
+	align-items: center;
+	line-height: 0.8rem;
+	font-size: 0.8rem;
 }
 
-
-main h4 {
-  position: absolute;
-  
-  bottom: 42%;
+.mobile {
+  display: none;
 }
+
 
 button {
-  position: absolute;
-  top: 36%;
-  
-  margin: .5rem 0;
-  border: none;
-  background: var(--gray-900);
-  padding: .4rem;
-  border-radius: 2px;
-  font-weight: 600;
-  color: var(--gray-200);
+	position: absolute;
+	top: 40%;
+
+	margin: 0.5rem 0;
+	padding: 0.4rem;
+
+	font-weight: 600;
+	color: var(--gray-200);
+	background: var(--gray-900);
+
+	border: none;
+	border-radius: 2px;
+  box-shadow: 2px 1px 2px 0px #00000070;
 }
 
 button:hover {
-  opacity: .9;
+	cursor: pointer;
+	opacity: 0.9;
 }
 
-footer {
-	background-image: url(../assets/softwaredev.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100vh;
-
-  position: relative;
+.questao__1--botao--desativado:hover,
+.questao__1--botao--desativado:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
 }
 
-nav {
-  position: absolute;
-  bottom: 16%;
-  left: 50%;
-}
+.nav--lista {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+  
+  max-width: 144px;
+  padding: 1rem 1.2rem;
 
-ul {
   display: flex;
-  justify-content: baseline;
-  gap: 1rem;
+	justify-content: center;
+	align-items: center;
+	gap: 0.8rem;
 
-  list-style: none;
+  background-color: var(--gray-950);
+  border-top-left-radius: 4px;
+	list-style: none;
 }
 
-i {
-  font-size: 1.6rem;
-  color: var(--gray-300);
+.nav--icone {
+	font-size: 1.4rem;
+	color: var(--gray-600);
 }
 
-i:hover {
-  color: aliceblue;
-  transform: scale(1.2);
-  transition: all .3s ease-in-out;
+.nav--icone:hover {
+	color: var(--gray-100);
+
+	transform: scale(1.2);
+	transition: all 0.3s ease-in-out;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+	width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--gray-300);
+	background: var(--gray-300);
 }
 
-
 ::-webkit-scrollbar-thumb {
-  background: var(--gray-800);
+	background: var(--gray-800);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gray-700);
+	background: var(--gray-700);
+}
+
+@media (max-width: 768px) {
+  body {
+    height: auto;
+  }
+
+	.main__resultados {
+		flex-direction: column;
+    padding: 2rem 0;
+	}
+
+	.main__resultados h4 {
+		font-size: 0.8rem;
+	}
+
+	.questao {
+		font-size: 0.8rem;
+		/* height: 250px; */
+	}
+
+  .mobile {
+    display: block;
+  }
+
+  .mobile a {
+    text-decoration: none;
+    color: var(--java-600);
+  }
+
+  .mobile a:hover {
+    text-decoration: underline;
+    opacity: .8;
+  }
+
+  .desktop {
+    display: none;
+  }
 }

@@ -1,29 +1,33 @@
 // //? QUESTÃO 1
-const questao1 = document.querySelector('.questao__1');
-const resposta = document.querySelector('.soma_verificada');
-const verificarSoma = document.querySelector('.verificar__soma');
+const somaBttn = document.querySelector('.questao__1--botao');
 
 let INDICE = 13;
 let SOMA = 0;
 
 function soma(I) {
-	let K = 0
+	let K = 0;
 
 	while (I > K) {
-		K++
-		SOMA += K
+		K++;
+		SOMA += K;
 	}
-	return SOMA
+	return SOMA;
 }
 
-function mostrarResultado() {
-	resposta.textContent = `O valor final de SOMA é: ${soma(INDICE)}`;
+function mostrarResultadoSoma() {
+	const somaResultado = document.querySelector('.questao__1--resultado');
+
+	somaResultado.textContent = `O valor de SOMA é: ${soma(INDICE)}`;
+
+	somaBttn.classList.add('questao__1--botao--desativado');
+	somaBttn.disabled = true;
+	console.log(soma);
 }
 
-verificarSoma.addEventListener('click', mostrarResultado);
+somaBttn.addEventListener('click', mostrarResultadoSoma);
 
 // //? QUESTÃO 2:
-const verificar = document.querySelector('.verificar__fibonacci');
+const fibonacciBttn = document.querySelector('.questao__2--botao');
 
 function pertenceFibonacci(num) {
 	let a = 0,
@@ -38,22 +42,21 @@ function pertenceFibonacci(num) {
 	return c === num || num === a || num === b;
 }
 
-function pertenceOuNao() {
-	const numeroProcurado = document.querySelector('.numero__fibonacci');
-	const fibonacciVerificado = document.querySelector('.fibonacci__verificado');
+function mostrarSePertence() {
+	const fibonacciInput = document.querySelector('.questao__2--input');
+	const fibonacciResultado = document.querySelector('.questao__2--resultado');
 
-	const numero = Number(numeroProcurado.value);
-	const pertence = pertenceFibonacci(numero);
-	const resultado = pertence ? 'pertence' : 'não pertence';
+	const numero = Number(fibonacciInput.value);
+	const sePertence = pertenceFibonacci(numero);
+	const formatarResultado = sePertence ? 'pertence' : 'não pertence';
 
-	return (fibonacciVerificado.textContent = `O número ${numero} ${resultado} à sequência de Fibonacci.`);
+	return (fibonacciResultado.textContent = `O número ${numero} ${formatarResultado} à sequência de Fibonacci.`);
 }
 
-verificar.addEventListener('click', pertenceOuNao);
+fibonacciBttn.addEventListener('click', mostrarSePertence);
 
 // //? QUESTAO 5
-
-const inverterBttn = document.querySelector('.inverter__string');
+const inverterBttn = document.querySelector('.questao__5--botao');
 
 function inverterString(string) {
 	let stringToArray = [...string];
@@ -65,13 +68,18 @@ function inverterString(string) {
 	return stringInvertida;
 }
 
-function stringInvertida() {
-	const resultado = document.querySelector('.string__invertida');
-	const string = document.querySelector('.string__do__usario');
+function mostrarStringInvertida() {
+	const stringInput = document.querySelector('.questao__5--input');
+	const stringResultado = document.querySelector('.questao__5--resultado');
 
-	return (resultado.innerHTML = `String Invertida: ${inverterString(
-		string.value
+	if (stringInput.value.length <= 1) {
+		alert('Digite uma string válida!');
+		return;
+	}
+
+	return (stringResultado.innerHTML = `String Invertida: ${inverterString(
+		stringInput.value
 	)}`);
 }
 
-inverterBttn.addEventListener('click', stringInvertida);
+inverterBttn.addEventListener('click', mostrarStringInvertida);
