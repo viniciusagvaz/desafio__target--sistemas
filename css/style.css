@@ -11,7 +11,7 @@
 	--gray-900: #41393b;
 	--gray-950: #231f20;
 
-  --java-600: #158c79;
+	--java-600: #158c79;
 }
 
 * {
@@ -22,83 +22,97 @@
 }
 
 body {
-  height: 100vh;
-  position: relative;
+	height: 100vh;
 	background-color: var(--gray-100);
 }
 
-.header__container {
-	position: relative;
-
-  display: flex;
-  justify-content: space-around;
+header {
+	display: flex;
+	justify-content: space-around;
 
 	background-color: var(--gray-950);
-  box-shadow: 0px 3px 5px 0px #00000070;
+	box-shadow: 0px 3px 5px 0px #00000070;
 }
 
 .header__logo {
 	max-width: 18rem;
 }
 
-.main__container {
-	background-color: var(--gray-100);
-}
+nav {
+	position: absolute;
+	top: 7.6rem;
+	right: 0;
+	left: 0;
 
-.main__resultados {
 	display: flex;
 	justify-content: center;
-  padding-top: 5%;
+	align-items: flex-end;
 }
 
-.main__resultados h4 {
-	position: absolute;
-	top: 60%;
+.nav--lista {
+	list-style: none;
+
+	display: flex;
+	justify-content: flex-end;
+	gap: 0.8rem;
+}
+
+.nav--icone {
+	font-size: 1.4rem;
+	color: var(--gray-400);
+}
+
+.nav--icone:hover {
+	color: var(--gray-100);
+
+	transform: scale(1.1);
+	transition: all 0.3s ease-in-out;
+}
+
+main {
+	margin-top: 5%;
+}
+
+.questions__container {
+	display: flex;
+	justify-content: space-evenly;
+	gap: 3rem;
 }
 
 .questao {
-	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 0.5rem;
+	/* justify-content: space-evenly; */
+	gap: 0.8rem;
 
-	max-width: 250px;
-	height: 300px;
-	margin: 0 auto;
-	padding: 0.8rem 0;
+	max-width: 400px;
 }
 
-
-.questao__1--paragrafo {
-	position: absolute;
-	top: 28%;
+.titulo {
+	font-size: 1.15rem;
 	font-weight: 600;
-	margin: 0 auto;
-	align-items: center;
-	line-height: 0.8rem;
-	font-size: 0.8rem;
 }
 
-.mobile {
-  display: none;
-}
+input {
+	padding: 0 0.6rem;
+  height: 42.18px;
 
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  box-shadow: 0px 3px 5px 1px #00000070;
+}
 
 button {
-	position: absolute;
-	top: 40%;
-
-	margin: 0.5rem 0;
-	padding: 0.4rem;
+	padding: 0.8rem;
 
 	font-weight: 600;
-	color: var(--gray-200);
+	color: var(--gray-100);
 	background: var(--gray-900);
 
 	border: none;
 	border-radius: 2px;
-  box-shadow: 2px 1px 2px 0px #00000070;
+	box-shadow: 2px 1px 2px 0px #00000070;
 }
 
 button:hover {
@@ -106,40 +120,22 @@ button:hover {
 	opacity: 0.9;
 }
 
-.questao__1--botao--desativado:hover,
-.questao__1--botao--desativado:disabled {
-	opacity: 0.6;
-	cursor: not-allowed;
+.resultado {
+  max-width: 300px;
 }
 
-.nav--lista {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-  
-  max-width: 144px;
-  padding: 1rem 1.2rem;
+footer {
+  position: absolute;
+  bottom: 1%;
+  left: 0;
+  right: 0;
 
-  display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.8rem;
-
-  background-color: var(--gray-950);
-  border-top-left-radius: 4px;
-	list-style: none;
+  text-align: center
 }
 
-.nav--icone {
-	font-size: 1.4rem;
-	color: var(--gray-600);
-}
 
-.nav--icone:hover {
-	color: var(--gray-100);
-
-	transform: scale(1.2);
-	transition: all 0.3s ease-in-out;
+.mobile {
+	display: none;
 }
 
 ::-webkit-scrollbar {
@@ -158,40 +154,37 @@ button:hover {
 	background: var(--gray-700);
 }
 
-@media (max-width: 768px) {
-  body {
-    height: auto;
-  }
-
-	.main__resultados {
+@media (max-width: 800px) {
+	.questions__container {
 		flex-direction: column;
-    padding: 2rem 0;
+		justify-content: space-around;
+
+		width: 360px;
+		margin: 0 auto;
 	}
 
-	.main__resultados h4 {
-		font-size: 0.8rem;
+	.mobile {
+		display: block;
 	}
 
-	.questao {
-		font-size: 0.8rem;
-		/* height: 250px; */
+	.mobile a {
+		text-decoration: none;
+		color: var(--java-600);
 	}
 
-  .mobile {
-    display: block;
-  }
+	.mobile a:hover {
+		text-decoration: underline;
+		opacity: 0.8;
+	}
 
-  .mobile a {
-    text-decoration: none;
-    color: var(--java-600);
-  }
+	.desktop {
+		display: none;
+	}
 
-  .mobile a:hover {
-    text-decoration: underline;
-    opacity: .8;
-  }
-
-  .desktop {
-    display: none;
+  footer {
+    position: relative;
+    margin-top: 3rem;
+    
+    text-align: center
   }
 }
