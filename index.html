@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,70 +23,94 @@
 </head>
 
 <body>
-  <header class="header__container">
-    <a class="header__link" href="https://www.linkedin.com/in/viniciusagvaz/"
-      target="_blank">
-      <img class="header__logo" src="./assets/logo.webp"
-        alt="Logo de Vinícius Vaz" /></a>
+  <header>
+    <img class="header__logo" src="./assets/logo.webp"alt="Logo de Vinícius Vaz" />
+    
+    <nav>
+      <ul class="nav--lista">
+        <li class="nav--item">
+          <a href="https://github.com/viniciusagvaz/" target="_blank">
+            <i class="fa-brands fa-github nav--icone"
+              alt="GitHub de Vinícius Vaz"></i>
+          </a>
+        </li>
+
+        <li class="nav--item">
+          <a href="https://www.linkedin.com/in/viniciusagvaz/" target="_blank">
+            <i class="fa-brands fa-linkedin nav--icone"
+              alt="Linkedin de Vinícius Vaz"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="main__container">
-    <div class="main__resultados">
-      <div class="questao__1 questao">
-        <h2>1&#41 Verifique a soma do INDICE 13</h2>
+  <main>
+    <div class="questions__container">
+      <section class="questao__1 questao">
+        <span class="questao__1--titulo titulo">1&#41 Verifique a soma do INDICE 13</span>
 
         <p class="questao__1--paragrafo desktop">
-          Para verificar a função "soma()" clique F12 e acesse console
+          Para verificar a função "soma()" acesse console
         </p>
 
         <p class="questao__1--paragrafo mobile">
           Para verificar a função "soma()", <a
             href="https://github.com/viniciusagvaz/desafio__target--sistemas/blob/main/js/resultados.js"
             target="_blank">acesse aqui</a>
-        </p>
+        </p> 
 
-        <button class="questao__1--botao">Verificar</button>
-        <h4 class="questao__1--resultado"></h4>
-      </div>
+        <button class="questao__1--botao">
+          Verificar      
+        </button>
 
-      <div class="questao__2 questao">
-        <h2>2&#41 Verifique se há em Fibonacci</h2>
+        <span class="questao__1--resultado resultado"></span>
+      </section>
 
-        <input class="questao__2--input" type="number"
-          placeholder="Digite um número" color="#fff" required />
-        <button class="questao__2--botao">Verificar</button>
-        <h4 class="questao__2--resultado"></h4>
-      </div>
+      <section class="questao__2 questao">
 
-      <div class="questao__5 questao">
-        <h2>5&#41 Inverta uma String</h2>
+        <span class="questao__2--titulo titulo">
+          2&#41 Verifique se há em Fibonacci
+        </span>
 
-        <input class="questao__5--input" type="text"
-          placeholder="Digite uma string" color="#fff" maxlength="32"
-          required />
-        <button class="questao__5--botao">Inverter</button>
-        <h4 class="questao__5--resultado"></h4>
-      </div>
+        <input 
+          class="questao__2--input" 
+          type="number" 
+          placeholder="Digite um número" 
+        />
+
+        <button class="questao__2--botao">
+          Verificar  
+        </button>
+
+        <span class="questao__2--resultado resultado"></span>
+      </section>
+
+      <section class="questao__5 questao">
+
+        <span class="questao__5--titulo titulo">
+          5&#41 Inverta uma String
+        </span>
+
+        <input 
+          class="questao__5--input" 
+          type="text"     
+          placeholder="Digite uma string"
+          maxlength="32"  
+        />
+
+        <button class="questao__5--botao">
+          Inverter
+        </button>
+        
+        <span class="questao__5--resultado resultado"></span>
+      </section>
     </div>
   </main>
 
 
   <footer>
-    <nav class="nav">
-      <ul class="nav--lista">
-        <li class="nav--item">
-          <a href="https://github.com/viniciusagvaz/" target="_blank">
-           <i class="fa-brands fa-github nav--icone" alt="GitHub de Vinícius Vaz"></i>
-          </a>
-        </li>
-
-        <li class="nav--item">
-          <a href="https://www.linkedin.com/in/viniciusagvaz/" target="_blank">     
-            <i class="fa-brands fa-linkedin nav--icone" alt="Linkedin de Vinícius Vaz"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <p>Desennvolvido por Vinícius Vaz</p>
   </footer>
 
   <script src="./js/resultados.js"></script>

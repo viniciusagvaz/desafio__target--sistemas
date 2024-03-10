@@ -17,7 +17,8 @@ function soma(indice = INDICE) {
 function mostrarResultadoSoma() {
 	const somaResultado = document.querySelector('.questao__1--resultado');
 
-	somaResultado.textContent = `O valor de SOMA é: ${soma()}`;
+	somaResultado.textContent = `O valor de SOMA é: ${soma()}
+  `;
 	console.log(soma);
 
 	somaBttn.classList.add('questao__1--botao--desativado');
@@ -84,7 +85,7 @@ function mostrarStringInvertida() {
 		return;
 	}
 
-	stringResultado.textContent = `String Invertida: ${inverterString(stringInput.value)}`;
+	stringResultado.textContent = `Resultado ${inverterString(stringInput.value)}`;
   stringInput.value = ''
 }
 
